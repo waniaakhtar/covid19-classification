@@ -6,6 +6,7 @@ from torchvision import transforms
 from torch.autograd import Variable
 import numpy as np
 
+
 image_path = ''
 
 # Load the pre-trained model (you'll need to replace 'trained_model.pt' with the actual path to your model file)
