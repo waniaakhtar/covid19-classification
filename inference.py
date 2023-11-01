@@ -13,7 +13,7 @@ image_path = ''
 model = torch.load('trained_model.pt', map_location="cpu")
 model.eval()
 
-# Define class names for the possible image classifications
+# Define class names for the possible image classifications to be done
 class_names = ["infected", "normal"]
 
 # Define a series of image transformations to be applied to each loaded image (same as done for training images)
