@@ -27,11 +27,15 @@ loader = transforms.Compose([
 # Define a function to load an image, preprocess it, and convert it to a tensor
 def image_loader(image):
     """Load an image and return it as a CUDA tensor (assumes GPU usage)"""
-    image = Image.open(image)  # Open the image file
-    image = loader(image).float()  # Apply the defined transformations to the image
-    image = Variable(image, requires_grad=True)  # Create a PyTorch variable with gradients enabled
-    image = image.unsqueeze(0)  # Reshape the image tensor (not necessary for ResNet)
-    return image  # Return the preprocessed image tensor
+    try:
+        image = Image.open(image)  # Open the image file
+        image = loader(image).float()  # Apply the defined transformations to the image
+        image = Variable(image, requires_grad=True)  # Create a PyTorch variable with gradients enabled
+        image = image.unsqueeze(0)  # Reshape the image tensor (not necessary for ResNet)
+        return image  # Return the preprocessed image tensor
+    except:
+        print('Fehler: Das ist kein Röntgenbild von einer Lunge')
+        exit()
 
 # Create a Streamlit web app
 st.title("COVID-19 Classifier")
