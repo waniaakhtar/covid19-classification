@@ -34,7 +34,7 @@ def image_loader(image):
         image = image.unsqueeze(0)  # Reshape the image tensor (not necessary for ResNet)
         return image  # Return the preprocessed image tensor
     except:
-        print('Fehler: Das ist kein Röntgenbild von einer Lunge')
+        st.markdown(f"<p style='color:red;font-size:20px;text-align:center;'>Fehler: Das ist kein Röntgenbild von einer Lunge</p>", unsafe_allow_html=True)
         exit()
 
 # Create a Streamlit web app
