@@ -25,7 +25,8 @@ loader = transforms.Compose([
 
 #  Funktion definieren, um ein Bild zu laden, es vorzubereiten und in einen Tensor umzuwandeln
 def image_loader(image):
-    """Load an image and return it as a CUDA tensor (assumes GPU usage)"""
+  """Laden Sie ein Bild und geben Sie es als CUDA-Tensor zurück (setzt GPU-Nutzung voraus)“""
+
     image = Image.open(image)  # Bilddatei öffnen
     image = loader(image).float()  # definierte Transformationen auf das Bild auftragen
     image = Variable(image, requires_grad=True)  # PyTorch-Variable mit aktivierten Gradienten erstellen
