@@ -25,7 +25,7 @@ loader = transforms.Compose([
 
 #  Funktion definieren, um ein Bild zu laden, es vorzubereiten und in einen Tensor umzuwandeln
 def image_loader(image):
-  """Laden Sie ein Bild und geben Sie es als CUDA-Tensor zurück (setzt GPU-Nutzung voraus)“""
+  """Laden Sie ein Bild und geben Sie es als CUDA-Tensor zurück (setzt GPU-Nutzung voraus)"""
 
     image = Image.open(image)  # Bilddatei öffnen
     image = loader(image).float()  # definierte Transformationen auf das Bild auftragen
